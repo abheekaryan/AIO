@@ -1,6 +1,8 @@
 const  app = require('express')()
-const server = require('http').createServer(app)
-const io = require('socket.io')(server)
+const http = require('https')
+const server = http.createServer(app)
+const { Server} = require('socket.io')
+const io = new Server(server)
 
 app.get('/',(req, res)=>{
     res.send("<h1>hello world<h1>")
