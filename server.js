@@ -15,7 +15,7 @@ io.on('connection', (socket) => {
         console.log(data)
         socket.emit('CHAT',data)
     })
-    socket.off('disconnect',()=>{
+    socket.on('disconnect',()=>{
         console.log('Client disconnected: '+socket.id)
     })
 })
