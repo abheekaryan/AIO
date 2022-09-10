@@ -3,7 +3,7 @@ const server = require('http').createServer(app)
 const io = require('socket.io')(server)
 
 app.get('/',(req, res)=>{
-    res.send("hello world")
+    res.send("<h1>hello world<h1>")
 })
 
 io.on('connection', (socket) => {
